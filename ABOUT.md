@@ -16,6 +16,7 @@ Then the temperature sensor part:
   Then we multiply by 5 and divide by 1024 to get the reading in voltage.
   Then we want to convert the voltage to temperature this somehow depends on the sensor 
   so I assumed using a sensor that represents each degree change with 10mv change.
+  To achieve that the above procedure happens once every 3 seconds, I used millis(), keeping a prevoius time of last reading and        continously asking for the current time if the difference exceeds 3 seconds then read the temperature as above 
   
   
 #Language and framework experience 
