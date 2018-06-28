@@ -1,6 +1,6 @@
 
 const byte ledPin = 13;    // to use Arduino's LED
-const byte interruptPin = 2;
+const byte interruptPin = 2;  // any of the interrupt pins will work (I choose 2)
 volatile byte ledState = LOW; // at the begining of the run the led is OFF
 bool calledISR= false;  //switch to true when switchLedISR function is called then set to false again when printing (needed for correct printing)
 
@@ -50,8 +50,8 @@ void loop() {
 
 void switchLedISR(){
   
-  calledISR = true;
-  ledState = !ledState;
+  calledISR = true; 
+  ledState = !ledState; // toggle the led state
   
 }
 
@@ -74,7 +74,7 @@ void readTemp(){
    Serial.println(" degrees C");
 }
 
-//printd that the switch was pressed and the LED state
+//prints that the switch was pressed and the LED state
 void printLedState(){
   
   Serial.println("Switch Pressed");
